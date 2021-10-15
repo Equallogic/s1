@@ -75,6 +75,6 @@ Write-Output "Agent Download Link: $agent_download_link"
 # Now that we have the download link and file name.  Download the package.
 $wc = New-Object System.Net.WebClient
 $wc.Headers['Authorization'] = "APIToken $api_key"
-$wc.DownloadFile($agent_download_link, "$env:C:\temp\ws1\$agent_file_name")
+$wc.DownloadFile($agent_download_link, "C:\temp\ws1\$agent_file_name")
 # Execute the package with the quiet option
-& "$env:C:\temp\ws1\$agent_file_name" /SITE_TOKEN=$site_token /quiet /reboot
+& "C:\temp\ws1\$agent_file_name" /SITE_TOKEN=$site_token /quiet /reboot
